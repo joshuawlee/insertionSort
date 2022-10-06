@@ -1,0 +1,42 @@
+// Add your code below:
+
+var unsortedArray = [String]()
+while let line = readLine() {
+    unsortedArray.append(line)
+}
+//func lowercase(array: inout [String]) {
+//    for i in 0..<array.count {
+  //      var x = i
+    //    array[x].lowercased()
+      //  x += 1
+    //}
+//}
+
+func swap(array: inout [String], firstIndex: Int, secondIndex: Int) {
+    let swaps = array[firstIndex]
+    array[firstIndex] = array[secondIndex]
+    array[secondIndex] = swaps
+}
+
+func insertionSort(array: inout [String]) {
+    var stringArray = array
+    var swapCount = 0
+    var totalCount = 0
+    var pass = 0
+   
+    for i in 1..<stringArray.count {                    
+        var x = i
+        pass += 1
+        while x > 0 && stringArray[x] < stringArray[x - 1] {        
+            swap(array: &stringArray, firstIndex: x, secondIndex: x-1)
+            swapCount += 1
+            totalCount += 1
+            x -= 1            
+        }
+        swapCount = 0
+    }
+    print(array)       
+}
+
+
+insertionSort(array: &unsortedArray)
