@@ -10,7 +10,7 @@ do
 	num=$((10**j))
 	for _ in {0..4}
 	do
-	    time cat words/$folder/$folder-10e$j.txt | swift main.swift
+	    time cat words/$folder-10e$j.txt | swift main.swift | > \dev\null
 	    echo $num "words"
 	done
     done

@@ -4,13 +4,11 @@ var unsortedArray = [String]()
 while let line = readLine() {
     unsortedArray.append(line)
 }
-//func lowercase(array: inout [String]) {
-//    for i in 0..<array.count {
-  //      var x = i
-    //    array[x].lowercased()
-      //  x += 1
-    //}
-//}
+func lowercase(array: inout [String]) {
+    for i in 0..<array.count {
+        array[i] = array[i].lowercased()
+    }
+}
 
 func swap(array: inout [String], firstIndex: Int, secondIndex: Int) {
     let swaps = array[firstIndex]
@@ -20,7 +18,7 @@ func swap(array: inout [String], firstIndex: Int, secondIndex: Int) {
 
 func insertionSort(array: inout [String]) {
     //var stringArray = array
-   
+    lowercase(array: &array)
     for i in 1..<array.count {                    
         var x = i
         
@@ -30,7 +28,7 @@ func insertionSort(array: inout [String]) {
         }
         
     }
-    print(array)       
+    print(array)
 }
 
 
